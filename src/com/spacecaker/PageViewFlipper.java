@@ -11,11 +11,11 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ViewFlipper;
 
-public class MultiPanelFlipper extends ViewFlipper {
+public class PageViewFlipper extends ViewFlipper {
 
     ViewFlipper VF;
 
-    public MultiPanelFlipper (final Context context, AttributeSet attrs) {
+    public PageViewFlipper (final Context context, AttributeSet attrs) {
 		  super(context, attrs);
 		  VF = (ViewFlipper) findViewById(R.id.flipper);
           BroadcastReceiver mReceiver = new BroadcastReceiver() {
@@ -35,19 +35,9 @@ public class MultiPanelFlipper extends ViewFlipper {
           		VF.setOutAnimation(outToRightAnimation());
               }
               
-          };
-          BroadcastReceiver mReceiver2 = new BroadcastReceiver() {
-              @Override
-              public void onReceive(Context c, Intent i) {
-             	 VF.setDisplayedChild(2);
-          		 VF.setInAnimation(inFromLeftAnimation());
-          		VF.setOutAnimation(outToRightAnimation());
-              }
-              
-          };          
+          };      
           context.registerReceiver(mReceiver, new IntentFilter("com.spacecaker.FLIP_TO_NOTIF")); 
           context.registerReceiver(mReceiver1, new IntentFilter("com.spacecaker.FLIP_TO_TOGGLES"));
-          context.registerReceiver(mReceiver2, new IntentFilter("com.spacecaker.FLIP_TO_SLIDERS"));
 	 }	
 
 

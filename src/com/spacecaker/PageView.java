@@ -10,11 +10,11 @@ import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ViewFlipper;
 
-public class PanelFlipper extends ViewFlipper {
+public class PageView extends ViewFlipper {
 
     ViewFlipper VF;
 
-    public PanelFlipper (final Context context, AttributeSet attrs) {
+    public PageView (final Context context, AttributeSet attrs) {
 		  super(context, attrs);
   
           BroadcastReceiver mReceiver = new BroadcastReceiver() {

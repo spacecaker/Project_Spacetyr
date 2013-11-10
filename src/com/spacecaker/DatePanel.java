@@ -11,18 +11,17 @@ import android.graphics.drawable.GradientDrawable;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
-public class FirstPanel extends LinearLayout {
+public class DatePanel extends LinearLayout {
 	
 	LinearLayout ln;
 	
-	 public FirstPanel(final Context context, AttributeSet attrs) {
+	 public DatePanel(final Context context, AttributeSet attrs) {
 		  super(context, attrs);
 		  
-			 ln = (LinearLayout) findViewById(R.id.first_panel);
+			 ln = (LinearLayout) findViewById(R.id.date_panel);
  
 	 }
 
-	 
 	 public void setHeightWrap() {
 		 LayoutParams lp = new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT);
 		 ln.setLayoutParams(lp);

@@ -10,15 +10,15 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
 
-public class QuickPanelButton extends ImageView {
+public class ButtonBurst extends ImageView {
 
  String message;
  ImageView image;
- public QuickPanelButton(final Context context, AttributeSet attrs) {
+ public ButtonBurst(final Context context, AttributeSet attrs) {
   super(context, attrs);
   
   image = (ImageView) findViewById(R.id.quickpanel_button);
-  image.setImageResource(R.drawable.btn_tg);
+  image.setImageResource(R.drawable.ic_notify_quickpanel);
  
 	image.setOnClickListener(new View.OnClickListener() {
 		 

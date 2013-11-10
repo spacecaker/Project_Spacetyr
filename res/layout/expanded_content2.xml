@@ -19,13 +19,6 @@
             android:text="SpaceCaker"
             android:clickable="true" android:textSize="30dp"
             android:layout_gravity="center" android:layout_marginTop="20dp"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Sexy"
-            android:layout_gravity="center"
-            android:singleLine="false"/>
 
     <ImageView
         android:id="@+id/imageView"
