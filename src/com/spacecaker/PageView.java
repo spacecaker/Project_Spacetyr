@@ -5,9 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.util.AttributeSet;
-import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
+import android.view.animation.AnimationUtils;
 import android.widget.ViewFlipper;
 
 public class PageView extends ViewFlipper {
@@ -21,8 +20,7 @@ public class PageView extends ViewFlipper {
               @Override
               public void onReceive(Context c, Intent i) {
             	 VF.setDisplayedChild(2);
-          		 VF.setInAnimation(inFromRightAnimation());
-          		VF.setOutAnimation(outToLeftAnimation());	 
+          		 VF.setInAnimation(inFromRightAnimation());	 
               }
               
           }; 
@@ -31,7 +29,6 @@ public class PageView extends ViewFlipper {
               public void onReceive(Context c, Intent i) {
              	 VF.setDisplayedChild(1);
           		 VF.setInAnimation(inFromLeftAnimation());
-          		VF.setOutAnimation(outToRightAnimation());
               }
               
           };        
@@ -39,52 +36,20 @@ public class PageView extends ViewFlipper {
           context.registerReceiver(mReceiver1, new IntentFilter("com.spacecaker.FLIP_TO_PANEL"));
 	 }	
 
-
-
-
     private Animation inFromRightAnimation() {
-    	  Animation inFromRight = new TranslateAnimation(
-    	    Animation.RELATIVE_TO_PARENT, +1.0f,
-    	    Animation.RELATIVE_TO_PARENT, 0.0f,
-    	    Animation.RELATIVE_TO_PARENT, 0.0f,
-    	    Animation.RELATIVE_TO_PARENT, 0.0f);
-    	  inFromRight.setDuration(300);
-    	  inFromRight.setInterpolator(new AccelerateInterpolator());
-    	  return inFromRight;
-    	 }
+  	  Animation inFromRight = AnimationUtils.loadAnimation(getContext(), R.anim.flip_3d_quicker_anim);
+  	  return inFromRight;
+  	 }
 
-    	 private Animation outToLeftAnimation() {
-    	  Animation outtoLeft = new TranslateAnimation(
-    	    Animation.RELATIVE_TO_PARENT, 0.0f,
-    	    Animation.RELATIVE_TO_PARENT, -1.0f,
-    	    Animation.RELATIVE_TO_PARENT, 0.0f,
-    	    Animation.RELATIVE_TO_PARENT, 0.0f);
-    	  outtoLeft.setDuration(300);
-    	  outtoLeft.setInterpolator(new AccelerateInterpolator());
+    	 @SuppressWarnings("unused")
+		private Animation outToLeftAnimation() {
+          Animation outtoLeft = AnimationUtils.loadAnimation(getContext(), R.anim.flip_3d_quicker_anim);
     	  return outtoLeft;
     	 }
 
     	 private Animation inFromLeftAnimation() {
-    	  Animation inFromLeft = new TranslateAnimation(
-    	    Animation.RELATIVE_TO_PARENT, -1.0f,
-    	    Animation.RELATIVE_TO_PARENT, 0.0f,
-    	    Animation.RELATIVE_TO_PARENT, 0.0f,
-    	    Animation.RELATIVE_TO_PARENT, 0.0f);
-    	  inFromLeft.setDuration(300);
-    	  inFromLeft.setInterpolator(new AccelerateInterpolator());
+          Animation inFromLeft = AnimationUtils.loadAnimation(getContext(), R.anim.flip_3d_quicker_anim);
     	  return inFromLeft;
     	 }
-
-    	 private Animation outToRightAnimation() {
-    	  Animation outtoRight = new TranslateAnimation(
-    	    Animation.RELATIVE_TO_PARENT, 0.0f,
-    	    Animation.RELATIVE_TO_PARENT, +1.0f,
-    	    Animation.RELATIVE_TO_PARENT, 0.0f,
-    	    Animation.RELATIVE_TO_PARENT, 0.0f);
-    	  outtoRight.setDuration(300);
-    	  outtoRight.setInterpolator(new AccelerateInterpolator());
-    	  return outtoRight;
-    	 }
-
 }
 
