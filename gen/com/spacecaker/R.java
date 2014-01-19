@@ -29,7 +29,8 @@ public final class R {
         public static final int ic_notify_quicksettings_normal=0x7f02000c;
         public static final int ic_notify_quicksettings_pressed=0x7f02000d;
         public static final int ic_notify_quicksettings_selected=0x7f02000e;
-        public static final int yolo=0x7f02000f;
+        public static final int touchwiz_edit=0x7f02000f;
+        public static final int yolo=0x7f020010;
     }
     public static final class id {
         public static final int clock_panel=0x7f070004;
