@@ -1,5 +1,7 @@
 package com.spacecaker;
 
+import java.lang.reflect.Method;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -25,7 +27,16 @@ public class NoteEditor extends ImageView {
 						Intent i = new Intent();
 						i.setClassName("com.android.settings", "com.android.settings.Settings");
 						i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-						context.startActivity(i);				
+						context.startActivity(i);
+						try{ 
+							Object service  = context.getSystemService("statusbar");
+							Class<?> statusbarManager = Class.forName("android.app.StatusBarManager");
+							Method collapse = statusbarManager.getMethod("collapse");
+							collapse.invoke(service);
+							}
+							catch(Exception ex){           
+	
+							}						
 					}
 				});						                                   
               }              
@@ -43,7 +54,16 @@ public class NoteEditor extends ImageView {
 						Intent i = new Intent();
 						i.setClassName("com.lidroid.parts", "com.lidroid.parts.MainActivity");
 						i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-						context.startActivity(i);				
+						context.startActivity(i);
+						try{ 
+							Object service  = context.getSystemService("statusbar");
+							Class<?> statusbarManager = Class.forName("android.app.StatusBarManager");
+							Method collapse = statusbarManager.getMethod("collapse");
+							collapse.invoke(service);
+							}
+							catch(Exception ex){           
+	
+							}							
 					}
 				});				          	  
               }              

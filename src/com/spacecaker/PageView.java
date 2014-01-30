@@ -20,7 +20,7 @@ public class PageView extends ViewFlipper {
               @Override
               public void onReceive(Context c, Intent i) {
             	 VF.setDisplayedChild(2);
-          		 VF.setInAnimation(inFromRightAnimation());	 
+          		 VF.setInAnimation(outToLeftAnimation());	 
               }
               
           }; 
@@ -28,7 +28,7 @@ public class PageView extends ViewFlipper {
               @Override
               public void onReceive(Context c, Intent i) {
              	 VF.setDisplayedChild(1);
-          		 VF.setInAnimation(inFromLeftAnimation());
+          		 VF.setInAnimation(outToLeftAnimation());
               }
               
           };        
@@ -37,19 +37,13 @@ public class PageView extends ViewFlipper {
 	 }	
 
     private Animation inFromRightAnimation() {
-  	  Animation inFromRight = AnimationUtils.loadAnimation(getContext(), R.anim.flip_3d_quicker_anim);
+  	  Animation inFromRight = AnimationUtils.loadAnimation(getContext(), R.anim.flip_3d_quicker_anim_out);
   	  return inFromRight;
   	 }
 
-    	 @SuppressWarnings("unused")
-		private Animation outToLeftAnimation() {
-          Animation outtoLeft = AnimationUtils.loadAnimation(getContext(), R.anim.flip_3d_quicker_anim);
-    	  return outtoLeft;
-    	 }
-
-    	 private Animation inFromLeftAnimation() {
-          Animation inFromLeft = AnimationUtils.loadAnimation(getContext(), R.anim.flip_3d_quicker_anim);
-    	  return inFromLeft;
-    	 }
+	private Animation outToLeftAnimation() {
+        Animation outtoLeft = AnimationUtils.loadAnimation(getContext(), R.anim.flip_3d_quicker_anim);
+     return outtoLeft;
+    }
 }
 

@@ -17,9 +17,12 @@ public class ButtonBurst extends ImageView {
  public ButtonBurst(final Context context, AttributeSet attrs) {
   super(context, attrs);
   
-  image = (ImageView) findViewById(R.id.quickpanel_button);
-  image.setImageResource(R.drawable.ic_notify_quickpanel);
- 
+	Intent intent = new Intent();
+	intent.setAction("com.spacecaker.FLIP_TO_NOTIF");
+	context.sendBroadcast(intent);  
+	
+	image = (ImageView) findViewById(R.id.quickpanel_button);
+	image.setImageResource(R.drawable.ic_notify_quickpanel);
 	image.setOnClickListener(new View.OnClickListener() {
 		 
 		@Override
