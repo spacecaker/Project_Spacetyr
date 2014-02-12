@@ -35,20 +35,26 @@ public final class R {
         public static final int stat_power_bg_press=0x7f020011;
         public static final int toggle1=0x7f020012;
         public static final int touchwiz_edit=0x7f020013;
-        public static final int yolo=0x7f020014;
+        public static final int tw_app_background=0x7f020014;
+        public static final int tw_gradient_bg=0x7f020015;
+        public static final int tw_other_background=0x7f020016;
+        public static final int tw_stay_awake=0x7f020017;
+        public static final int tw_stay_awake_disabled=0x7f020018;
+        public static final int yolo=0x7f020019;
     }
     public static final class id {
-        public static final int clock_panel=0x7f070004;
-        public static final int dateView=0x7f070006;
-        public static final int date_panel=0x7f070002;
-        public static final int dayView=0x7f070005;
-        public static final int digitalClock1=0x7f070007;
-        public static final int flipper=0x7f07000a;
+        public static final int cake_bar_space=0x7f070001;
+        public static final int clock_panel=0x7f070005;
+        public static final int dateView=0x7f070007;
+        public static final int date_panel=0x7f070003;
+        public static final int dayView=0x7f070006;
+        public static final int digitalClock1=0x7f070008;
+        public static final int flipper=0x7f07000b;
         public static final int imageView=0x7f070000;
-        public static final int panelflipper=0x7f070003;
-        public static final int quickpanel_button=0x7f070009;
-        public static final int set_btn=0x7f070008;
-        public static final int spacelayoutbar=0x7f070001;
+        public static final int panelflipper=0x7f070004;
+        public static final int quickpanel_button=0x7f07000a;
+        public static final int set_btn=0x7f070009;
+        public static final int spacelayoutbar=0x7f070002;
     }
     public static final class layout {
         public static final int expanded_content2=0x7f030000;
