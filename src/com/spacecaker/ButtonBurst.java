@@ -1,11 +1,13 @@
 package com.spacecaker;
 
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import com.spacecaker.R;
 import android.content.SharedPreferences;
+import android.provider.Settings;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -39,6 +41,7 @@ public class ButtonBurst extends ImageView {
 				context.sendBroadcast(intent);
 	        }		};
 	});
+	
  }
  
 }
